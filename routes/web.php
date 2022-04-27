@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/',[HomeController::class, 'index'])->name('/');
+Route::get('/signUpIndex',[UserController::class, 'getsignUp'])->name('/signUpIndex');
+Route::post('/Signup',[UserController::class, 'signup'])->name('/Signup');
