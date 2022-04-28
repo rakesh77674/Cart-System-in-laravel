@@ -21,3 +21,4 @@ Route::get('/',[HomeController::class, 'index'])->name('/');
 Route::get('/signUpIndex',[UserController::class, 'getsignUp'])->name('/signUpIndex');
 Route::post('/Signup',[UserController::class, 'signup'])->name('/Signup');
 Route::get('/add-to-cart/{id}', [HomeController::class, 'getAddToCart'])->name('product.addToCart');
+Route::get('/shopping-cart', [HomeController::class, 'getshoppingCart'])->name('product.shoppingCart');

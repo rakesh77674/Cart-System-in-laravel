@@ -19,7 +19,13 @@ class HomeController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
         $request->session()->put('cart',$cart);
-        dd($request->session()->get('cart'));
-        return redirect()->route('product.index');
+        return redirect()->back();
+    }
+    public function getshoppingCart(){
+        
+        $oldCart =Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('shop.shoppingCart',['products'=> $cart->items, 'totalPrice'=> $cart->totalPrice]);
+        
     }
 }
